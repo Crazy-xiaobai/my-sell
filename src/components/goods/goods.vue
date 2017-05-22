@@ -2,11 +2,7 @@
   <div class="goods" ref="goodsWrapper">
     <div class="menu-wrapper" ref="menuWrapper">
       <ul>
-        <li
-        v-for="(item, index) in goods"
-        class="menu-item menu-item-hook"
-        :class="{'current':currentIndex===index}"
-        @click="selectMenu(index, $event)">
+        <li v-for="(item, index) in goods" class="menu-item menu-item-hook" :class="{'current':currentIndex===index}" @click="selectMenu(index, $event)">
           <span class="text">
             <i v-show="item.type>0" class="icon" :class="classMap[item.type]"></i>{{item.name}}
           </span>
@@ -158,33 +154,33 @@
 </script>
 
 <style lang="scss">
-   @import "../../common/scss/mixin.scss";
-  .goods{
+  @import "../../common/scss/mixin.scss";
+  .goods {
     display: flex;
     position: absolute;
     top: rem(348px);
     bottom: rem(92px);
     width: 100%;
     overflow: hidden;
-    .menu-wrapper{
+    .menu-wrapper {
       // flex: 0 0 rem(160px);
       width: rem(160px);
       background: #f3f5f7;
-      .menu-item{
+      .menu-item {
         display: table;
         height: rem(104px);
         @include rem(padding, 0 24px);
         line-height: rem(28px);
-        &.current{
+        &.current {
           position: relative;
           margin-top: -1px;
           background: #fff;
-          .text{
+          .text {
             @include border-none();
             font-weight: 700;
           }
         }
-        .icon{
+        .icon {
           display: inline-block;
           width: rem(24px);
           height: rem(24px);
@@ -193,100 +189,102 @@
           background-repeat: no-repeat;
           position: relative;
           transform: translateY(rem(2px));
-          &.decrease{
+          &.decrease {
             @include bg-image('decrease_3');
           }
-          &.discount{
+          &.discount {
             @include bg-image('discount_3');
           }
-          &.guarantee{
+          &.guarantee {
             @include bg-image('guarantee_3');
           }
-          &.invoice{
+          &.invoice {
             @include bg-image('invoice_3');
           }
-          &.special{
+          &.special {
             @include bg-image('special_3');
           }
         }
-        .text{
+        .text {
           display: table-cell;
           vertical-align: middle;
           width: rem(112px);
           font-size: rem(24px);
-          @include border-1px(rgba(7,17,27,0.1));
+          @include border-1px(rgba(7, 17, 27, 0.1));
         }
       }
     }
-    .foods-wrapper{
+    .foods-wrapper {
       flex: 1;
-      .title{
+      .title {
         height: rem(52px);
         line-height: rem(52px);
         @include rem(padding-left, 28px);
         font-size: rem(24px);
-        color: rgb(147,153,159);
+        color: rgb(147, 153, 159);
         background: #f3f5f7;
         border-left: 2px solid #d9dde1;
       }
-      .food-item{
+      .food-item {
         display: flex;
         @include rem(margin, 36px);
         @include rem(padding-bottom, 36px);
-        @include border-1px(rgba(7,17,27,0.1));
-        &:last-child{
+        @include border-1px(rgba(7, 17, 27, 0.1));
+        &:last-child {
           @include border-none();
           @include rem(margin-bottom, 0);
         }
-        .icon{
+        .icon {
           width: rem(114px);
           height: rem(114px);
           @include rem(margin-right, 20px);
-          img{
+          img {
             width: 100%;
             height: 100%;
           }
         }
-        .content{
+        .content {
           flex: 1;
-          .name{
+          .name {
             line-height: rem(28px);
             @include rem(margin-top, 4px);
             font-size: rem(28px);
-            color: rgb(7,17,27);
+            color: rgb(7, 17, 27);
           }
-          .desc, .extra{
+          .desc,
+          .extra {
             font-size: rem(20px);
-            color: rgb(147,153,159);
+            color: rgb(147, 153, 159);
           }
-          .desc{
+          .desc {
             line-height: rem(24px);
             @include rem(margin-top, 16px);
             @include rem(margin-bottom, 16px);
           }
-          .extra, .price{
-            span{
+          .extra,
+          .price {
+            span {
               float: left;
             }
           }
-          .extra{
+          .extra {
             line-height: rem(20px);
-            .count{
+            .count {
               @include rem(margin-right, 24px);
             }
           }
-          .price{
+          .price {
             line-height: rem(48px);
             font-weight: 700;
-            .now{
+            .now {
               @include rem(margin-right, 16px);
               font-size: rem(28px);
-              color: rgb(240,20,20);
+              color: rgb(240, 20, 20);
             }
-            .old{
+            .old {
               font-size: rem(20px);
               text-decoration: line-through;
-              color: rgb(147,153,159);
+              color: rgb(147, 153, 159);
             }
           }
         }

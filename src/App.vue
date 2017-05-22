@@ -19,52 +19,52 @@
 </template>
 
 <script type="text/ecmascript-6">
-import header from '@/components/header/header';
+  import header from '@/components/header/header';
 
-const ERR_OK = 0;
+  const ERR_OK = 0;
 
-export default {
-  name: 'app',
-  data() {
-    return {
-      seller: {
-      }
-    };
-  },
-  created() {
-    this.$http.get('/api/seller').then(response => {
-      // success callback
-      response = response.body;
-      if (response.errno === ERR_OK) {
-        this.seller = response.data;
-      }
-    }, response => {
-      // error callback
-      console.log('seller--error');
-    });
-  },
-  components: { 'v-header': header }
-};
+  export default {
+    name: 'app',
+    data() {
+      return {
+        seller: {
+        }
+      };
+    },
+    created() {
+      this.$http.get('/api/seller').then(response => {
+        // success callback
+        response = response.body;
+        if (response.errno === ERR_OK) {
+          this.seller = response.data;
+        }
+      }, response => {
+        // error callback
+        console.log('seller--error');
+      });
+    },
+    components: { 'v-header': header }
+  };
 </script>
 
 <style lang="scss">
   @import "./common/scss/mixin.scss";
-  .tab{
+  .tab {
     display: flex;
     width: 100%;
     height: rem(80px);
     line-height: rem(80px);
-    @include border-1px(rgba(7,17,27,0.1));
-    .tab-item{
+    @include border-1px(rgba(7, 17, 27, 0.1));
+    .tab-item {
       flex: 1;
       text-align: center;
-      >a{
+      >a {
         display: block;
         font-size: rem(28px);
         color: rgb(78, 85, 93)
       }
-      &.active{
-        a{
+      &.active {
+        a {
           color: rgb(240, 20, 20);
         }
       }
