@@ -108,6 +108,8 @@
         let goodsHeight = this.goodsHeight;
         let distance = this.listMenuHeight[this.menuCurIndex];
 
+        // 这里不知道怎么获取transform: translateY的值
+
         if (distance > (goodsHeight / 2)) {
           let moveH = -Math.floor(distance - (goodsHeight / 2));
           this.menuScroll.scrollTo(0, moveH, 300, 'easing');
