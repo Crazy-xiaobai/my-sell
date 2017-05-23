@@ -46,69 +46,69 @@
 
 <style lang="scss" rel="stylesheet/scss">
   @import "../../common/scss/mixin.scss";
-  .star{
+  .star {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    .star-item{
+    .star-item {
       background-repeat: no-repeat;
     }
-    &.star-48{
-      .star-item{
+    &.star-48 {
+      .star-item {
         width: rem(40px);
         height: rem(40px);
         @include rem(margin-right, 44px);
         background-size: rem(40px);
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
-        &.on{
+        &.on {
           @include bg-image('star48_on');
         }
-        &.half{
+        &.half {
           @include bg-image('star48_half');
         }
-        &.off{
+        &.off {
           @include bg-image('star48_off');
         }
       }
     }
-    &.star-36{
-      .star-item{
+    &.star-36 {
+      .star-item {
         width: rem(30px);
         height: rem(30px);
         @include rem(margin-right, 12px);
         background-size: rem(30px);
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
-        &.on{
+        &.on {
           @include bg-image('star36_on');
         }
-        &.half{
+        &.half {
           @include bg-image('star36_half');
         }
-        &.off{
+        &.off {
           @include bg-image('star36_off');
         }
       }
     }
-    &.star-24{
-      .star-item{
+    &.star-24 {
+      .star-item {
         width: rem(20px);
         height: rem(20px);
         @include rem(margin-right, 6px);
         background-size: rem(20px);
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
-        &.on{
+        &.on {
           @include bg-image('star24_on');
         }
-        &.half{
+        &.half {
           @include bg-image('star24_half');
         }
-        &.off{
+        &.off {
           @include bg-image('star24_off');
         }
       }

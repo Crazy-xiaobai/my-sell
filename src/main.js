@@ -14,9 +14,9 @@ Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
+/* eslint-disable indent */
 var router = new VueRouter({
-  routes: [
-    {
+  routes: [{
       path: '/goods',
       name: 'goods',
       component: goods
@@ -40,7 +40,9 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: {
+    App
+  }
 });
 
 router.push('goods');

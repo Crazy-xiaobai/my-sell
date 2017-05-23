@@ -53,10 +53,7 @@
       return {
         goods: [],
         listHeight: [],
-        listMenuHeight: [],
-        scrollY: 0,
-        menuCurIndex: 0,
-        goodsHeight: 0
+        scrollY: 0
       };
     },
     computed: {
@@ -81,8 +78,6 @@
           this.$nextTick(() => {
             this._initScroll();
             this._calcHeight();
-            this._calcmenuItemHeight();
-            this.getGoodsHeight();
           });
         }
       }, response => {
@@ -100,19 +95,6 @@
         let el = foodList[index];
         this.foodsScroll.scrollToElement(el, 300);
       },
-      menuAutoSrcoll() {
-        let goodsHeight = this.goodsHeight;
-        let distance = this.listMenuHeight[this.menuCurIndex];
-
-        // 这里不知道怎么获取transform: translateY的值
-
-        if (distance > (goodsHeight / 2)) {
-          let moveH = -Math.floor(distance - (goodsHeight / 2));
-          this.menuScroll.scrollTo(0, moveH, 300, 'easing');
-        } else {
-          this.menuScroll.scrollTo(0, 0, 300, 'easing');
-        }
-      },
       _initScroll() {
         this.menuScroll = new BScroll(this.$refs.menuWrapper, {
           click: true
@@ -123,7 +105,6 @@
 
         this.foodsScroll.on('scroll', (pos) => {
           this.scrollY = Math.abs(Math.round(pos.y));
-          this.menuAutoSrcoll();
         });
       },
       _calcHeight() {
@@ -135,19 +116,6 @@
           height += item.clientHeight;
           this.listHeight.push(height);
         };
-      },
-      _calcmenuItemHeight() {
-        let menuList = this.$refs.menuWrapper.querySelectorAll('.menu-item-hook');
-        let height = 0;
-        this.listMenuHeight.push(height);
-        for (let i = 0; i < menuList.length; i++) {
-          let item = menuList[i];
-          height += item.clientHeight;
-          this.listMenuHeight.push(height);
-        };
-      },
-      getGoodsHeight() {
-        this.goodsHeight = this.$refs.goodsWrapper.clientHeight;
       }
     }
   };

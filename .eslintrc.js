@@ -26,7 +26,7 @@ module.exports = {
     // 以分号结尾
     'semi': ["error", "always"],
     // 是否检查缩进格式
-    // 'indent': 0,
+    'indent': 0,
     // 在文件末尾需要或禁止换行
     // 'eol-last': 0,
     // 是否在函数括号前添加一个空格
